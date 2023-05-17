@@ -1,0 +1,70 @@
+version: '3'
+services:
+  backend:
+    build: ./backend
+    restart: always
+    ports:
+      - 3000:3000
+    depends_on:
+      - postgres
+    environment:
+      PGUSER: your_username
+      PGPASSWORD: your_password
+      PGDATABASE: your_database
+      PGHOST: postgres
+
+  frontend:
+    build: ./frontend
+    restart: always
+    ports:
+      - 80:80
+
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: your_username
+      POSTGRES_PASSWORD: your_password
+      POSTGRES_DB: your_database
+      
+
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: your_email@example.com
+      PGADMIN_DEFAULT_PASSWORD: your_password
+    ports:
+      - 8080:80
+
+  prisma:
+    image: prismagraphql/prisma:latest
+    restart: always
+    ports:
+      - 4466:4466
+    environment:
+      PRISMA_CONFIG: |
+        port: 4466
+        databases:
+          default:
+            connector: postgres
+            host: postgres
+            port: 5432
+            user: your_username
+            password: your_password
+            migrations: true
+
+  nginx:
+    build: 
+      context: ./nginx
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 8000:80
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - backend
+      - frontend
+
+#Certifique-se de substituir os valores your_username, your_password, your_database e your_email@example.com pelos seus próprios valores correspondentes.
