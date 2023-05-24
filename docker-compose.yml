@@ -4,7 +4,7 @@ services:
     build: ./backend
     restart: always
     ports:
-      - 3000:3000
+      - 5000:5000
     depends_on:
       - postgres
     environment:
@@ -17,7 +17,7 @@ services:
     build: ./frontend
     restart: always
     ports:
-      - 80:80
+      - 3000:3000
 
   postgres:
     image: postgres
@@ -26,7 +26,6 @@ services:
       POSTGRES_USER: your_username
       POSTGRES_PASSWORD: your_password
       POSTGRES_DB: your_database
-      
 
   pgadmin:
     image: dpage/pgadmin4
@@ -55,7 +54,7 @@ services:
             migrations: true
 
   nginx:
-    build: 
+    build:
       context: ./nginx
       dockerfile: Dockerfile
     restart: always
@@ -66,5 +65,6 @@ services:
     depends_on:
       - backend
       - frontend
+
 
 #Certifique-se de substituir os valores your_username, your_password, your_database e your_email@example.com pelos seus próprios valores correspondentes.
