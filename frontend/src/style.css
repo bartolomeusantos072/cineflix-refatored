@@ -110,15 +110,66 @@ button {
     color: white;
 
 }
-
+/*ASSENTOS*/
+.seats{
+    display: flex;
+    width: 30%;
+    min-width: 375px;
+    flex-direction: column;
+}
+.painel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .assentos {
     display: flex;
-    flex-wrap: wrap;
-    background-color: pink;
+    flex-wrap:wrap;
+    height: 310px;
 }
-form{
+.assento {
+    width: 26px;
+    height: 26px;
+    margin: 12px 4px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.disponivel {
+    border: 1px solid #808F9D;
+    background: #C3CFD9;
+    cursor:grab;
+}
+.indisponivel {
+    border: 1px solid #F7C52B;
+    background: #FBE192;
+    cursor: not-allowed;
+}
+.selecionado{
+    background: #8DD7CF;
+    border: 1px solid #1AAE9E; 
+    
+}
+
+.legenda{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 300px;
+    height: 80px;
+    margin-bottom: 16px;
+}
+.legenda figure{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+/*FORMULARIO*/
+form {
     height: 50%;
-    background-color: red;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -140,14 +191,19 @@ input {
     border: 1px solid #D5D5D5;
     border-radius: 3px;
     font-family: 'Roboto';
-    font-style: italic;
+   
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
     display: flex;
     align-items: center;
-    color: #AFAFAF;
+    
 }
+::placeholder {
+    color: #AFAFAF;
+    font-style: italic;
+    opacity: 1; /* Firefox */
+  }
 label {
     width: 327px;
     height: 25px;
@@ -161,6 +217,8 @@ label {
 
     color: #293845;
 }
+
+/*FOOTER*/
 footer {
     position: fixed;
     left: 0;

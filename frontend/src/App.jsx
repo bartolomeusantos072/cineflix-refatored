@@ -10,7 +10,7 @@ import "./style.css";
 import Header from "./components/Header.jsx";
 import Home from "./pages/Home.jsx";
 import Sessoes from "./pages/Sessoes";
-import Assentos from "./pages/Assentos";
+import ViewSeats from "./pages/ViewSeats";
 import Sucesso from "./pages/Sucesso";
 
 const router = createBrowserRouter(
@@ -18,7 +18,7 @@ const router = createBrowserRouter(
     <>
       <Route path="/" element={<Home />} />
       <Route exact path="/filmes/:id" element={<Sessoes />} />
-      <Route exact path="/sessao/:idAssento" element={<Assentos />} />
+      <Route exact path="/sessao/:idAssento" element={<ViewSeats />} />
       <Route path="/sucesso" element={<Sucesso />} />
     </>
   )
