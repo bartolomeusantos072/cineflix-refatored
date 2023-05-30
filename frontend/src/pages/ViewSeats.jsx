@@ -22,7 +22,7 @@ export default function ViewSeats() {
   if (sessionLoading) <p>Loading...</p>;
 
   if (sessionError) <p>{sessionError.message}</p>;
-  console.log(session);
+ 
   if (session) {
     return (
       <>

@@ -32,8 +32,14 @@ main {
     width: 100%;
     background-color: #ffffff;
 }
-.sub-title h3 {
-    font-weight: 400;
+.sub-title.vermelho {
+    color: red;
+}
+.sub-title.verde {
+    color:green;
+}
+.verificacao h3 {
+    font-weight: 700;
     font-size: 24px;
     line-height: 28px;
     display: flex;
@@ -42,6 +48,20 @@ main {
     letter-spacing: 0.04em;
     color: #293845;
 }
+
+
+.verificacao p {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.04em;
+    color: #293845;
+}
+
 section {
     margin: 185px auto;
     padding-bottom: 120px;
@@ -71,7 +91,8 @@ section {
     height: 193px;
     margin: 8px;
 }
-.sessions {
+
+.sessions, .verificacao {
     display: flex;
     flex-direction: column;
     padding-left: 1%;
@@ -110,14 +131,15 @@ button {
     color: white;
 
 }
+
 /*ASSENTOS*/
-.seats{
+.seats {
     display: flex;
     width: 30%;
     min-width: 375px;
     flex-direction: column;
 }
-.painel{
+.painel {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -125,7 +147,7 @@ button {
 }
 .assentos {
     display: flex;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
     height: 310px;
 }
 .assento {
@@ -140,20 +162,20 @@ button {
 .disponivel {
     border: 1px solid #808F9D;
     background: #C3CFD9;
-    cursor:grab;
+    cursor: grab;
 }
 .indisponivel {
     border: 1px solid #F7C52B;
     background: #FBE192;
     cursor: not-allowed;
 }
-.selecionado{
+.selecionado {
     background: #8DD7CF;
-    border: 1px solid #1AAE9E; 
-    
+    border: 1px solid #1AAE9E;
+
 }
 
-.legenda{
+.legenda {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -161,7 +183,7 @@ button {
     height: 80px;
     margin-bottom: 16px;
 }
-.legenda figure{
+.legenda figure {
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -191,19 +213,19 @@ input {
     border: 1px solid #D5D5D5;
     border-radius: 3px;
     font-family: 'Roboto';
-   
+
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
     display: flex;
     align-items: center;
-    
+
 }
 ::placeholder {
     color: #AFAFAF;
     font-style: italic;
     opacity: 1; /* Firefox */
-  }
+}
 label {
     width: 327px;
     height: 25px;
@@ -217,7 +239,17 @@ label {
 
     color: #293845;
 }
-
+aside{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin:0 auto;
+}
+aside button{
+    margin: 15px;
+    
+}
 /*FOOTER*/
 footer {
     position: fixed;
@@ -260,5 +292,8 @@ footer {
 }
 .desativado {
     display: none;
-
+}
+.bloqueado{
+    /* cursor: none; */
+    cursor: not-allowed
 }

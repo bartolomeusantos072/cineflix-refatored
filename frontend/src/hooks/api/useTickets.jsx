@@ -6,7 +6,7 @@ export default function useTickets() {
     loading: postTicketLoading,
     error: postTicketError,
     act: postTicket
-  } = useAsync(postTickets, false);
+  } = useAsync((tickets)=>postTickets(tickets), false);
 
   return {
     postTicketLoading,
